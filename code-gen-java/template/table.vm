@@ -1,0 +1,86 @@
+package $packageName;
+
+import android.content.ContentValues;
+import android.database.Cursor;
+
+import cn.apacal.codegen.cloudvoice.comm.IDBItem;
+import cn.apacal.codegen.cloudvoice.comm.Log;
+
+/**
+* Created by apacalzhong on 1/21/16.
+*/
+public class $tableName extends IDBItem{
+
+    final static String TAG = "TABLE-$tableName";
+
+    public static final String TABLE_NAME = "$tableName";
+
+    public static String getSql() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("create table $tableName (");
+#foreach($key in $fields.keySet())
+        sb.append("${key} ${formatter.getDBType(${fields.get($key).getType()})} ");
+#if($fields.get($key).isNullDefault)
+        sb.append("default $fields.get($key).getDefaultValue(), ");
+#else
+        sb.append(", ");
+#end
+#end
+        sb.append("id integer primary key autoincrement)");
+    }
+
+    public static final String PKEY = "id";
+
+
+    public String getPKey() {
+        return PKEY;
+    }
+
+    public String getPKeyValue() {
+        return String.valueOf(field_id);
+    }
+
+    public int field_id;
+#foreach($key in $fields.keySet())
+    public ${fields.get($key).getType()} field_${key};
+#end
+
+    public $tableName() {
+        super();
+        field_time_millis = System.currentTimeMillis();
+    }
+
+    @Override
+    public void convertFrom(final Cursor cu) {
+        if (cu != null) {
+#foreach($key in $fields.keySet())
+            field_$key = cu.${formatter.genGetDBTypeMethod(${fields.get($key).getType()})}(cu.getColumnIndex("${key}"));
+#end
+        } else {
+            Log.e(TAG, "convertFrom cursor is null");
+        }
+    }
+
+    @Override
+    public ContentValues convertTo() {
+        ContentValues values = new ContentValues();
+#foreach($key in $fields.keySet())
+        values.put("$key", field_$fields.get($key).getType();
+#end
+
+        return values;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("field_id [" + field_id + "],");
+#foreach($key in $fields.keySet())
+        sb.append("field_$key [" + field_$fields.get($key).getType() + "],");
+#end
+
+        return sb.toString;
+    }
+}

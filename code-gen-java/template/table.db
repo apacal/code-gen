@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tables package="cn.apacal.codegen.autogen.table">
+	<table name="Translation">
+		<field name="time_millis" type="int"/>
+		<field name="type" type="int"/>
+		<field name="status" type="int"/>
+		<field name="ext" type="String"/>
+		<field name="content" type="String"/>
+	</table>
+</tables>

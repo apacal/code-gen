@@ -1,0 +1,72 @@
+#
+# Buck generated
+#
+**/buck_gen/
+**/buck-out
+**/buck-cache
+**/.buckd
+**/BUCK
+**/sim_*
+
+#
+# Eclipse
+#
+**/.settings
+**/.externalToolBuilders
+
+#
+# IntelliJ IDEA
+#
+**/.idea/
+*.iws
+*.ipr
+*.iml
+
+#
+# and Android Studio
+#
+**/build/
+**/.gradle/
+**/local.properties
+
+#
+# Python
+#
+*.pyc
+
+#
+# OSX files
+#
+**/.DS_Store
+
+#
+# SCM
+#
+**/.svn
+
+#
+# Proguard
+#
+**/app/proguard/
+**/wear/wear_mapping.txt
+
+#
+# other generated
+#
+**/gen
+**/bin
+**/classes
+**/out/
+**/.metadata
+**/__.proto
+**/TagMapping.txt
+**/.apk
+**/LinearAllocXmlResult.xml
+**/.#
+**/_temp_preload_/
+
+**/.svn
+
+
+
+
