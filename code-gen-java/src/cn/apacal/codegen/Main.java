@@ -14,20 +14,20 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        String templatePath = "/Users/apacalzhong/IdeaProjects/codegen/template/";
-        String templateName = "table.vm";
-        String xmlPath = "/Users/apacalzhong/IdeaProjects/codegen/template/table.db";
-        String outPath = "/Users/apacalzhong/IdeaProjects/codegen/build";
+//        String templatePath = "/Users/apacalzhong/src/code-gen/code-gen-java/template/";
+//        String templateName = "table.vm";
+//        String xmlPath = "/Users/apacalzhong/src/code-gen/code-gen-java/template/table.db";
+//        String outPath = "/Users/apacalzhong/src/code-gen/code-gen-java/build";
 
-//        if (args.length < 4) {
-//            System.out.println("args less, must four args, [templatePath templateName xmlPath outPath]");
-//            return;
-//        }
-//
-//        String templatePath = args[0];
-//        String templateName = args[1];
-//        String xmlPath = args[2];
-//        String outPath = args[3];
+        if (args.length < 4) {
+            System.out.println("args less, must four args, [templatePath templateName xmlPath outPath]");
+            return;
+        }
+
+        String templatePath = args[0];
+        String templateName = args[1];
+        String xmlPath = args[2];
+        String outPath = args[3];
 
         CodeGen codeGen = new CodeGen();
         codeGen.genDBFile(templatePath, templateName, xmlPath, outPath);
