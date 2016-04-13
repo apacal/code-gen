@@ -23,7 +23,6 @@ public class Field {
         }
     }
 
-    @Override
     public String toString() {
         return String.format("type[%s], defaultValue[%s]", type, defaultValue);
     }

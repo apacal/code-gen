@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tables package="cn.apacal.codegen.autogen.table">
+<tables package="cn.apacal.codegen.autogen.table" parentClassPackageName="cn.apacal.codegen.cloudvoice.comm">
 	<table name="Translation">
 		<field name="time_millis" type="int"/>
 		<field name="type" type="int"/>

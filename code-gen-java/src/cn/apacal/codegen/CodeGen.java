@@ -58,7 +58,7 @@ public class CodeGen {
             Element root = doc.getDocumentElement();
 
             String packageName = root.getAttribute("package");
-            HashMap<String, Field> fields = new HashMap<>();
+            HashMap<String, Field> fields = new HashMap<String, Field>();
             String tableName;
 
             context.put("packageName", packageName);

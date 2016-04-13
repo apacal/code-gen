@@ -4,6 +4,7 @@ package cn.apacal.codegen;
 public class Main {
 
     /**
+     * java -version >= 1.5
      * 使用velocity来生成文件,可以是java源码, cpp源码等
      * java -jar genType templatePath templateName xmlPath outPath
      * genType 使用何种方式
@@ -15,6 +16,7 @@ public class Main {
      */
     public static void main(String[] args) {
 
+//        String genType = "db";
 //        String templatePath = "/Users/apacalzhong/src/code-gen/code-gen-java/template/";
 //        String templateName = "table.vm";
 //        String xmlPath = "/Users/apacalzhong/src/code-gen/code-gen-java/template/table.db";
